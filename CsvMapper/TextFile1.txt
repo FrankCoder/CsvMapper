@@ -1,0 +1,39 @@
+Client name
+Product
+Ticket Created By
+Requester Email
+Assigned to Resource name
+Assignee Email
+Ticket Created Date
+Ticket Type
+Ticket Number 
+Ticket Title
+Ticket Description
+Ticket Status
+Note Date and Time Posted
+Note Created by
+Note Type
+Note Title
+Note Detail
+enum FieldIDs
+{
+	Client_name,
+	Product,
+	Ticket_Created_By,
+	Requester_Email,
+	Assigned_to_Resource_name,
+	Assignee_Email,
+	Ticket_Created_Date,
+	Ticket_Type,
+	Ticket_Number,
+	Ticket_Title,
+	Ticket_Description,
+	Ticket_Status,
+	Note_Date_and_Time_Posted,
+	Note_Created_by,
+	Note_Type,
+	Note_Title,
+	Note_Detail,
+	Empty1,
+	Empty2,
+}

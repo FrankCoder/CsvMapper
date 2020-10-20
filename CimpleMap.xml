@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CsvMap merge_on="Autotask Ticket Number">
+  <Target name="Customer">
+    <Source>Client name</Source>
+  </Target>
+  <Target name="Product Line">
+    <Source>Product</Source>
+  </Target>
+  <Target name="Ticket Created By">
+    <Source>Ticket Created By</Source>
+  </Target>
+  <Target name="Assignee">
+    <Source>Assigned to Resource name</Source>
+  </Target>
+  <Target name="Created">
+    <Source>Ticket Created Date</Source>
+  </Target>
+  <Target name="Autotask Ticket Number">
+    <Source>Ticket Number</Source>
+  </Target>
+  <Target name="Summary">
+    <Source>Ticket Title</Source>
+  </Target>
+  <Target name="Description">
+    <Source>Ticket Description</Source>
+  </Target>
+  <Target name="Status">
+    <Source>Ticket Status</Source>
+  </Target>
+  <Target name="Note">
+    <Source>Note Created by</Source>
+    <Source>Note Date and Time Posted</Source>
+    <Source>Note Detail</Source>
+  </Target>
+</CsvMap>
