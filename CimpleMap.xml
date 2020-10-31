@@ -6,14 +6,17 @@
   <Target name="Product Line">
     <Source>Product</Source>
   </Target>
-  <Target name="Ticket Created By">
+  <Target name="AutotaskReporter">
     <Source>Ticket Created By</Source>
   </Target>
-  <Target name="Assignee">
+  <Target name="AutotaskAssignee">
     <Source>Assigned to Resource name</Source>
   </Target>
   <Target name="Created">
     <Source>Ticket Created Date</Source>
+  </Target>
+  <Target name="Completed">
+    <Source>Ticket Completed Date</Source>
   </Target>
   <Target name="Autotask Ticket Number">
     <Source>Ticket Number</Source>
@@ -24,12 +27,13 @@
   <Target name="Description">
     <Source>Ticket Description</Source>
   </Target>
+  <Target name="Issue Type">
+    <Source>Ticket Type</Source>
+  </Target>
   <Target name="Status">
     <Source>Ticket Status</Source>
   </Target>
   <Target name="Note">
-    <Source>Note Created by</Source>
-    <Source>Note Date and Time Posted</Source>
     <Source>Note Detail</Source>
   </Target>
 </CsvMap>
