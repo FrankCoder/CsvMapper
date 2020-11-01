@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" 
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 	<Product Id="*" 
            Name="CSV Mapper Setup" 
            Language="1033" 
@@ -10,26 +11,56 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes"/>
     <Property Id="ARPPRODUCTICON" Value="CsvMapperUI.exe" />
-    <PropertyRef Id="NETFRAMEWORK"/>
-		<Feature Id="ProductFeature" Title="Setup" Level="1">
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED"/>
+    <Condition Message="This application requires .NET Framework 4.6.1. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED]]>
+    </Condition>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="JFD">
+          <Directory Id="APPLICATIONFOLDER" Name="CsvMapper" />
+        </Directory>
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="CompanyFolder" Name="JFD">
+          <Directory Id="AppFolder" Name="Csv Mapper" />
+        </Directory>
+      </Directory>
+		</Directory>
+    <DirectoryRef Id="AppFolder">
+      <Component Id="ApplicationShortcut" Guid="{92643797-C056-4BF5-83A6-232D2FA65166}">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Csv Mapper"
+                  Description="Remap, merge columns and rows of a .csv file."
+                  Target="[APPLICATIONFOLDER]CsvMapperUI.exe"
+                  WorkingDirectory="APPLICATIONFOLDER"
+                  Icon="CsvMapperUI.exe"/>
+        <Shortcut Id="UninstallProduct"             
+                  Name="Uninstall Csv Mapper"
+                  Description="Uninstalls Csv Mapper"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]"/>
+        <RemoveFolder Id="CompanyFolder" Directory="CompanyFolder" On="uninstall"/>
+        <RemoveFolder Id="AppFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\JFD\Csv Mapper" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+		<Feature Id="ProductFeature" Title="Cvs Mapper" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
 		</Feature>
+    <Icon Id="CsvMapperUI.exe" SourceFile="$(var.SolutionDir)CsvMapperUI\bin\$(var.Configuration)\CsvMapperUI.exe" />
 	</Product>
 
 	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="Setup" />
-			</Directory>
-		</Directory>
-	</Fragment>
-
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+		<ComponentGroup Id="ProductComponents" Directory="APPLICATIONFOLDER">
 			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
+			 <Component Id="cmp_mapperexe" Guid="{94AD8930-5755-408F-AFA8-4669B14BA349}">
+         <File Id="file_csvmapperexe" KeyPath="yes" Source="$(var.SolutionDir)CsvMapper\bin\$(var.Configuration)\CsvMapper.exe" />
+			 </Component> 
+			 <Component Id="cmp_mapperuiexe" Guid="{A3C5E170-9983-4469-BF5C-0AC5E3F2D43B}">
+         <File Id="file_csvmapperuiexe" KeyPath="yes" Source="$(var.SolutionDir)CsvMapperUI\bin\$(var.Configuration)\CsvMapperUI.exe" />
+			 </Component> 
 		</ComponentGroup>
 	</Fragment>
 </Wix>

@@ -6,8 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvMapper", "CsvMapper\CsvMapper.csproj", "{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvMapperUI", "CsvMapperUI\CsvMapperUI.csproj", "{050D0E6E-7754-46E2-A572-E87E72326243}"
+	ProjectSection(ProjectDependencies) = postProject
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0} = {041CC9E9-EEC4-49D4-A71B-6417D576C3C0}
+	EndProjectSection
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Setup", "Setup\Setup.wixproj", "{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{050D0E6E-7754-46E2-A572-E87E72326243} = {050D0E6E-7754-46E2-A572-E87E72326243}
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0} = {041CC9E9-EEC4-49D4-A71B-6417D576C3C0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

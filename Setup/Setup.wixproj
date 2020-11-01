@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>e370fbf7-c9b5-4af3-96f4-5743ebd7d6ae</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>Setup</OutputName>
+    <OutputName>CsvMapperSetup</OutputName>
     <OutputType>Package</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -23,6 +23,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
   </ItemGroup>
   <PropertyGroup>
     <WixToolPath>$(SolutionDir)packages\WiX.Toolset.UnofficialFork.3.11.2\tools\wix\</WixToolPath>
