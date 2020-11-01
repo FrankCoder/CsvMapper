@@ -36,6 +36,14 @@ namespace CsvMapperUI
                     MessageBox.Show($"{Mapper} not there.");
                 }
 
+                if(!string.IsNullOrWhiteSpace(Properties.Settings.Default.LastSource) && File.Exists(Properties.Settings.Default.LastSource))
+                {
+                    SourceFile_tb.Text = Properties.Settings.Default.LastSource;
+                }
+                if(!string.IsNullOrWhiteSpace(Properties.Settings.Default.LastTarget))
+                {
+                    TargetFile_tb.Text = Properties.Settings.Default.LastTarget;
+                }
                 MapPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.Create), "FieldMap.xml");
                 if (System.IO.File.Exists(MapPath))
                 {
@@ -74,9 +82,15 @@ namespace CsvMapperUI
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.CheckFileExists = true;
             dlg.DefaultExt = ".csv";
+            if(!string.IsNullOrWhiteSpace(Properties.Settings.Default.LastSource) && File.Exists(Properties.Settings.Default.LastSource))
+            {
+                dlg.FileName = Properties.Settings.Default.LastSource;
+            }
             if ((bool)dlg.ShowDialog())
             {
                 SourceFile_tb.Text = dlg.FileName;
+                Properties.Settings.Default.LastSource = dlg.FileName;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -85,9 +99,15 @@ namespace CsvMapperUI
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.CheckFileExists = false;
             dlg.DefaultExt = ".csv";
+            if(!string.IsNullOrWhiteSpace(Properties.Settings.Default.LastTarget))
+            {
+                TargetFile_tb.Text = Properties.Settings.Default.LastTarget;
+            }
             if ((bool)dlg.ShowDialog())
             {
                 TargetFile_tb.Text = dlg.FileName;
+                Properties.Settings.Default.LastTarget = dlg.FileName;
+                Properties.Settings.Default.Save();
             }
         }
 

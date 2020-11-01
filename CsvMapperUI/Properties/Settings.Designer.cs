@@ -23,7 +23,7 @@ namespace CsvMapperUI.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<CsvMap merge_on=\"\">\r\n  <Target name=\"\">\r" +
             "\n    <Source></Source>\r\n    <Source></Source>\r\n  </Target>\r\n</CsvMap>\r\n")]
@@ -31,14 +31,44 @@ namespace CsvMapperUI.Properties {
             get {
                 return ((string)(this["DefaultMap"]));
             }
+            set {
+                this["DefaultMap"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LastMapPath {
             get {
                 return ((string)(this["LastMapPath"]));
+            }
+            set {
+                this["LastMapPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastTarget {
+            get {
+                return ((string)(this["LastTarget"]));
+            }
+            set {
+                this["LastTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastSource {
+            get {
+                return ((string)(this["LastSource"]));
+            }
+            set {
+                this["LastSource"] = value;
             }
         }
     }

@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CsvMapperUI.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DefaultMap" Type="System.String" Scope="Application">
+    <Setting Name="DefaultMap" Type="System.String" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;CsvMap merge_on=""&gt;
   &lt;Target name=""&gt;
@@ -12,7 +12,13 @@
 &lt;/CsvMap&gt;
 </Value>
     </Setting>
-    <Setting Name="LastMapPath" Type="System.String" Scope="Application">
+    <Setting Name="LastMapPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastTarget" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastSource" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

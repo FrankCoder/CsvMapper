@@ -7,20 +7,38 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvMapper", "CsvMapper\CsvM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvMapperUI", "CsvMapperUI\CsvMapperUI.csproj", "{050D0E6E-7754-46E2-A572-E87E72326243}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Setup", "Setup\Setup.wixproj", "{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Debug|x86.Build.0 = Debug|Any CPU
 		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{041CC9E9-EEC4-49D4-A71B-6417D576C3C0}.Release|x86.Build.0 = Release|Any CPU
 		{050D0E6E-7754-46E2-A572-E87E72326243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{050D0E6E-7754-46E2-A572-E87E72326243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050D0E6E-7754-46E2-A572-E87E72326243}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{050D0E6E-7754-46E2-A572-E87E72326243}.Debug|x86.Build.0 = Debug|Any CPU
 		{050D0E6E-7754-46E2-A572-E87E72326243}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{050D0E6E-7754-46E2-A572-E87E72326243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050D0E6E-7754-46E2-A572-E87E72326243}.Release|x86.ActiveCfg = Release|Any CPU
+		{050D0E6E-7754-46E2-A572-E87E72326243}.Release|x86.Build.0 = Release|Any CPU
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Debug|x86.ActiveCfg = Debug|x86
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Debug|x86.Build.0 = Debug|x86
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Release|Any CPU.ActiveCfg = Release|x86
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Release|x86.ActiveCfg = Release|x86
+		{E370FBF7-C9B5-4AF3-96F4-5743EBD7D6AE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
