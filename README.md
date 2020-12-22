@@ -1,7 +1,7 @@
 ## Where does it run
 On Windows, it is a .NET (4.6.1) app.
 
-## What is made up of
+## What it is made up of
 A command line tool named CsvMapper.exe. Run it from CMD or PowerShell to learn how to to invoke it.
 A UI app named CsvMapperUI.exe that simplifies editing the mapping and runs the tool.
 
