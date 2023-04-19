@@ -21,7 +21,7 @@ A typical row merging scenario is when the .csv file contains data from a query 
     1,widget fail,Widget fails to work,In Progress,Comment 2
     1,widget fail,Widget fails to work,In Progress,Comment 3
     2,widget2 fail,Widget2 fails to work,In Progress,Widget2 Comment 1
-    2,widget2 fail,Widget2 fails to work,In Progress,Widget2Comment 2
+    2,widget2 fail,Widget2 fails to work,In Progress,Widget2 Comment 2
 
 In the above scenario, using column 1 as the unique ID, the three rows With Ticket ID 1 will be merged into one row with all three comments appended in the comment field.
 
